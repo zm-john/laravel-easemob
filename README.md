@@ -27,19 +27,19 @@ laravel-easemob 将环信 v3.0 服务端的操作进行了封装, [查看环信�
 ### Resource
  
 
-[`Token`](#Token)
+[`Token`](#token)
 
-[`User`](#User)
+[`User`](#user)
 
-[`ChatMessage`](#ChatMessage)
+[`ChatMessage`](#chatmessage)
 
-[`ChatFile`](#ChatFile)
+[`ChatFile`](#chatFile)
 
-[`Message`](#Message)
+[`Message`](#message)
 
-[`ChatGroup`](#ChatGroup)
+[`ChatGroup`](#chatgroup)
 
-[`ChatRoom`](#ChatRoom)
+[`ChatRoom`](#chatroom)
 
 
 ### Result
