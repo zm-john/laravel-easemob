@@ -1,0 +1,23 @@
+{
+    "name": "quhang/laravel-easemob",
+    "description": "easemob for laravel",
+    "type": "library",
+    "require": {
+        "php": ">=5.6",
+        "illuminate/support": "~5.1",
+        "guzzlehttp/guzzle": "^6.2",
+        "nesbot/carbon": "~1.19"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "john",
+            "email": "quhang36@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Quhang\\LaravelEasemob\\": "src/"
+        }
+    }
+}
