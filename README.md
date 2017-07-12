@@ -5,7 +5,7 @@ laravel-easemob 将环信 v3.0 服务端的操作进行了封装, [查看环信�
 ## Install
 
 * composer 安装
-	* todo
+	* `composer require quhang/laravel-easemob:1.0.0`
 
 * config
 
@@ -13,26 +13,33 @@ laravel-easemob 将环信 v3.0 服务端的操作进行了封装, [查看环信�
    * 在 `config/app.php` `aliases` 中添加 `'Easemob'   => Quhang\LaravelEasemob\Facade\Easemob::class,`
    * 运行 `php artisan vendor:publish --provider="Quhang\LaravelEasemob\EasemobServiceProvider"`
 
-
+* 配置 `config/easemob.php`
+	* `host` 环信服务地址, http://a1.easemob.com
+	* `org_name`
+	* `app_name`
+	* `client_id`
+	* `client_secret`
+	* `download_file_path` 下载环信资源保存目录
+	
 
 ## Usage
  
 ### Resource
  
 
-`Token`
+[`Token`](#Token)
 
-`User`
+[`User`](#User)
 
-`ChatMessage`
+[`ChatMessage`](#ChatMessage)
 
-`ChatFile`
+[`ChatFile`](#ChatFile)
 
-`Message`
+[`Message`](#Message)
 
-`ChatGroup`
+[`ChatGroup`](#ChatGroup)
 
-`ChatRoom`
+[`ChatRoom`](#ChatRoom)
 
 
 ### Result
