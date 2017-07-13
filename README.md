@@ -7,11 +7,29 @@ laravel-easemob 将环信 v3.0 服务端的操作进行了封装, [查看环信�
 * composer 安装
 	* `composer require quhang/laravel-easemob:1.0.0`
 
-* config
+* 在 `config/app.php`  中添加下面两项
 
-   * 在 `config/app.php` `provider` 中添加 `Quhang\LaravelEasemob\EasemobServiceProvider::class,`
-   * 在 `config/app.php` `aliases` 中添加 `'Easemob'   => Quhang\LaravelEasemob\Facade\Easemob::class,`
-   * 运行 `php artisan vendor:publish --provider="Quhang\LaravelEasemob\EasemobServiceProvider"`
+```
+[
+	'providers' => [
+	
+		...
+		
+		Quhang\LaravelEasemob\EasemobServiceProvider::class,
+	]
+	
+	'aliases' => [
+	
+		...
+		
+		'Easemob' => Quhang\LaravelEasemob\Facade\Easemob::class,
+	]
+]
+
+```
+* 发布配置文件
+
+`php artisan vendor:publish --provider="Quhang\LaravelEasemob\EasemobServiceProvider"`
 
 * 配置 `config/easemob.php`
 	* `host` 环信服务地址, http://a1.easemob.com
@@ -132,9 +150,16 @@ Easemob::token()->get()
 * 注册 IM 用户[单个]  
 
 ```
-register($username, $password, $nickname = '')
+registerregister($username, $password, $nickname = '', $authorization = false)
 
+
+// 开放注册
 Easemob::user()->register('username1', '123456')
+
+// 授权注册
+Easemob::user()->register('username1', '123456', '', false)
+或
+Easemob::user()->authorizeRegister('username1', '123456')
 ```
 
 * 注册 IM 用户[批量] 
@@ -185,14 +210,14 @@ Easemob::user()->batchDelete(1)
 ```
 setPassword($password)
 
-Easemob::user('username')->setPassword(123456')
+Easemob::user('username')->setPassword('123456')
 ```
 
 * 修改用户推送显示昵称 
 
 ```
 setNickname($nickname)
-Easemob::user('username')->setNickname(xxx')
+Easemob::user('username')->setNickname('xxx')
 ```
 
 * 给 IM 用户添加好友
@@ -200,7 +225,7 @@ Easemob::user('username')->setNickname(xxx')
 ```
 addFriend($friendName)
 
-Easemob::user('username')->addFriend(friend_name')
+Easemob::user('username')->addFriend('friend_name')
 ```
 
 * 解除 IM 用户的好友关系
@@ -208,7 +233,7 @@ Easemob::user('username')->addFriend(friend_name')
 ```
 removeFriend($friendName)
 
-Easemob::user('username')->removeFriend(friend_name')
+Easemob::user('username')->removeFriend('friend_name')
 ```
 
 * 获取 IM 用户的好友列表

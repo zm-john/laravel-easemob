@@ -73,13 +73,26 @@ class User extends Resource
      * @param  string $username
      * @param  string $password
      * @param  string $nickname=''
+     * @param  boolean $authorization=false 
      * @return array
      */
-    public function register($username, $password, $nickname = '')
+    public function register($username, $password, $nickname = '', $authorization = false)
     {
         return $this->request('post', '/users', [
             'body' => json_encode(compact('username', 'password', 'nickname'))
-        ]);
+        ], $authorization);
+    }
+
+    /**
+     * 授权注册
+     * @param  string $username
+     * @param  string $password
+     * @param  string $nickname
+     * @return array
+     */
+    public function authorizeRegister($username, $password, $nickname = '')
+    {
+        return $this->register($username, $password, $nickname, true);
     }
 
     /**
