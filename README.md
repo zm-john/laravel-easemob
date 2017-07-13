@@ -5,7 +5,7 @@ laravel-easemob 将环信 v3.0 服务端的操作进行了封装, [查看环信�
 ## Install
 
 * composer 安装
-	* `composer require quhang/laravel-easemob:1.0.0`
+	* `composer require quhang/laravel-easemob`
 
 * 在 `config/app.php`  中添加下面两项
 
