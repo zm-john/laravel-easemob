@@ -247,7 +247,7 @@ Easemob::user('username')->friends()
 * 获取 IM 用户的黑名单
 
 ```
-blocks($username)
+blocks()
 
 Easemob::user('username')->blocks()
 ```
@@ -255,9 +255,9 @@ Easemob::user('username')->blocks()
 * 往 IM 用户的黑名单中加人
 
 ```
-addBlocks($username, array $users)
+addBlocks(array $users)
 
-Easemob::user()->addBlocks('usernameX', ['username1', 'username2', ...])
+Easemob::user('usernameX')->addBlocks(['username1', 'username2', ...])
 ```
 
 * 从 IM 用户的黑名单中减人
@@ -271,7 +271,7 @@ Easemob::user('username')->removeBlocks('blockuser')
 * 查看用户在线状态
 
 ```
-status($username)
+status()
 
 Easemob::user('username')->status()
 ```
